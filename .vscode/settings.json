@@ -1,0 +1,164 @@
+{
+    "workbench.colorTheme": "Visual Studio 2017 Dark - C++",
+    "terminal.integrated.inheritEnv": false,
+    // "editor.fontFamily": "'monospace'",
+    // "terminal.integrated.fontFamily": "monospace",
+    "workbench.iconTheme": "vscode-icons",
+    // "workbench.settings.editor": "json",
+
+    "settingsSync.ignoredExtensions": [],
+    "git.enableSmartCommit": true,
+    "git.autofetch": true,
+    "emmet.triggerExpansionOnTab": true,
+    "emmet.showAbbreviationSuggestions": true,
+    "emmet.showExpandedAbbreviation": "always",
+    "emmet.includeLanguages": {
+    "vue-html": "html",
+    "vue": "html",
+    "wpy": "html"
+    },
+    
+    // 新开窗口,保证新开窗口是独立窗口
+    "workbench.startupEditor": "newUntitledFile",
+    "workbench.editor.enablePreview": false,
+
+    //主题颜色 
+    "git.confirmSync": false,
+    "explorer.confirmDelete": false,
+    "editor.fontSize": 14,
+    "editor.wordWrap": "on",
+    "editor.detectIndentation": false,
+    // 重新设定tabsize
+    "editor.tabSize": 4,
+    // #值设置为true时，每次保存的时候自动格式化；
+    "editor.formatOnSave": false,
+    //每120行就显示一条线
+    "editor.rulers": [],
+
+    "window.zoomLevel": 1,
+    //失去焦点后自动保存
+    "files.autoSave": "onFocusChange",
+
+    // 在使用搜索功能时，将这些文件夹/文件排除在外
+    "search.exclude": {
+        "**/node_modules": true,
+        "**/bower_components": true,
+        "**/target": true,
+        "**/logs": true,
+    }, 
+
+    // 这些文件将不会显示在工作空间中，可以根据自己需要自行配置
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/*.js": {
+            "when": "$(basename).ts" //ts编译后生成的js文件将不会显示在工作空中
+        },
+        "**/node_modules": true
+    },
+    "editor.suggest.snippetsPreventQuickSuggestions": false,
+
+    "code-runner.runInTerminal": true,
+    "code-runner.ignoreSelection": true,
+    "code-runner.executorMap": {
+    "javascript": "node",
+    "java": "cd $dir && javac $fileName && java $fileNameWithoutExt",
+    "c": "chcp 65001 && cd $dir && gcc $fileName -o .\\build\\$fileNameWithoutExt && .\\build\\$fileNameWithoutExt",
+    "cpp": "chcp 65001 && cd $dir && if (!(Test-Path .\\build)) {$null = md .\\build} && g++ $fileName -o .\\build\\$fileNameWithoutExt && .\\build\\$fileNameWithoutExt",
+    "objective-c": "cd $dir && gcc -framework Cocoa $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+    "php": "php",
+    "python": "python -u",
+    "perl": "perl",
+    "perl6": "perl6",
+    "ruby": "ruby",
+    "go": "go run",
+    "lua": "lua",
+    "groovy": "groovy",
+    "powershell": "powershell -ExecutionPolicy ByPass -File",
+    "bat": "cmd /c",
+    "shellscript": "bash",
+    "fsharp": "fsi",
+    "csharp": "scriptcs",
+    "vbscript": "cscript //Nologo",
+    "typescript": "ts-node",
+    "coffeescript": "coffee",
+    "scala": "scala",
+    "swift": "swift",
+    "julia": "julia",
+    "crystal": "crystal",
+    "ocaml": "ocaml",
+    "r": "Rscript",
+    "applescript": "osascript",
+    "clojure": "lein exec",
+    "haxe": "haxe --cwd $dirWithoutTrailingSlash --run $fileNameWithoutExt",
+    "rust": "cd $dir && rustc $fileName && $dir$fileNameWithoutExt",
+    "racket": "racket",
+    "scheme": "csi -script",
+    "ahk": "autohotkey",
+    "autoit": "autoit3",
+    "dart": "dart",
+    "pascal": "cd $dir && fpc $fileName && $dir$fileNameWithoutExt",
+    "d": "cd $dir && dmd $fileName && $dir$fileNameWithoutExt",
+    "haskell": "runhaskell",
+    "nim": "nim compile --verbosity:0 --hints:off --run",
+    "lisp": "sbcl --script",
+    "kit": "kitc --run",
+    "v": "v run",
+    "sass": "sass --style expanded",
+    "scss": "scss --style expanded",
+    "less": "cd $dir && lessc $fileName $fileNameWithoutExt.css",
+    "FortranFreeForm": "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+    "fortran-modern": "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+    "fortran_fixed-form": "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+    "fortran": "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+    "sml": "cd $dir && sml $fileName"
+    },
+    // "python.languageServer": "Jedi",
+    // "python.linting.enabled": true,
+    // "editor.minimap.enabled": false,
+    // "python.linting.flake8Args": 
+    // [
+    //   "--max-line-length=120",
+    //   "--ignore=E402,F841,F401,E302,E305,W292,E262,E251,E128,W605,W293,F403, E126, W504,F405,W191,W291",//编号根据自己需要确定
+    // ],
+    "python.linting.flake8Enabled": false,
+    "editor.mouseWheelZoom": true,
+    "C_Cpp.errorSquiggles": "enabled",
+    "[python]": {
+    "editor.formatOnType": true
+    },
+    
+    "fileheader.customMade": {    //此为头部注释
+    "Description": "",
+    "Version": "2.0",
+    "Author": "xuchaoxin",
+    "Date": "Do not edit",
+    "LastEditors": "shuttle",
+    "LastEditTime": "Do not edit"
+    },
+    "fileheader.cursorMode": {  //此为函数注释
+    "description":"",
+    "param": "",
+    "return": "",
+    "author":"shuttle"
+    },
+    "cmake.configureOnOpen": true,
+    // "terminal.integrated.shell.windows": "C:\\Windows\\System32\\cmd.exe",
+    "git.openRepositoryInParentFolders": "never",
+    "pasteImage.path": "${currentFileDir}/images",
+    "pasteImage.basePath": "${projectRoot}",
+    "pasteImage.forceUnixStyleSeparator": true,
+    "pasteImage.prefix": "/",
+    "files.associations": {
+        "iostream": "cpp",
+        "algorithm": "cpp",
+        "utility": "cpp",
+        "queue": "cpp",
+        "vector": "cpp",
+        "ostream": "cpp",
+        "xstddef": "cpp"
+    }
+}
