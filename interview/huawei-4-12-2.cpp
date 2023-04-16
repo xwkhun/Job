@@ -43,66 +43,66 @@ const int N = 100010;
 
 // 方法一：yxc 深度优先遍历DFS模板
 
-int q[N], benefit[N];
-int h[N], e[N], ne[N], idx;
-bool st[N];
+// int q[N], benefit[N];
+// int h[N], e[N], ne[N], idx;
+// bool st[N];
 
-void add(int a, int b)
-{
-    e[idx] = b;
-    ne[idx] = h[a];
-    h[a] = idx++;
-}
+// void add(int a, int b)
+// {
+//     e[idx] = b;
+//     ne[idx] = h[a];
+//     h[a] = idx++;
+// }
 
-int dfs(int u)
-{
-    st[u] = true;  // 标记已遍历过
-    q[u] = benefit[u]; // 节点u的初始食物
+// int dfs(int u)
+// {
+//     st[u] = true;  // 标记已遍历过
+//     q[u] = benefit[u]; // 节点u的初始食物
 
-    // 遍历从u点开始的所有可行路线
-    for (int i = h[u]; i != -1; i = ne[i])
-    {
-        int j = e[i];
-        if (!st[j])   // 该点没有被遍历过 
-            q[u] = max(q[u], benefit[u] + dfs(j));  // 更新以u为起始点的路线所能获得的最大食物
-        // cout << "u: " << u << ' ' << q[u] << ' ';
-    }
+//     // 遍历从u点开始的所有可行路线
+//     for (int i = h[u]; i != -1; i = ne[i])
+//     {
+//         int j = e[i];
+//         if (!st[j])   // 该点没有被遍历过 
+//             q[u] = max(q[u], benefit[u] + dfs(j));  // 更新以u为起始点的路线所能获得的最大食物
+//         // cout << "u: " << u << ' ' << q[u] << ' ';
+//     }
 
-    // printf("\n第%d个点, res: %d\n", u, q[u]);
-    return q[u];
-}
+//     // printf("\n第%d个点, res: %d\n", u, q[u]);
+//     return q[u];
+// }
 
 
-int main()
-{
-    // 初始化n个单链表
-    memset(h, -1, sizeof h);
+// int main()
+// {
+//     // 初始化n个单链表
+//     memset(h, -1, sizeof h);
 
-    int n;
-    cin >> n;
-    // 添加方格之间的边
-    for (int i = 0; i < n; i ++ )
-    {
-        int a, b, c;
-        cin >> a >> b >> c;
+//     int n;
+//     cin >> n;
+//     // 添加方格之间的边
+//     for (int i = 0; i < n; i ++ )
+//     {
+//         int a, b, c;
+//         cin >> a >> b >> c;
 
-        // 去除-1的情况
-        if (b != -1)
-            add(b, a);  
-        benefit[a] = c;  // 初始化每个方格能获得的食物
-    }
+//         // 去除-1的情况
+//         if (b != -1)
+//             add(b, a);  
+//         benefit[a] = c;  // 初始化每个方格能获得的食物
+//     }
 
-    int ans = 0;
-    for (int i = 0; i < n; i ++ )
-    {
-        ans = max(ans, dfs(i));
-        cout << endl;
-    }
+//     int ans = 0;
+//     for (int i = 0; i < n; i ++ )
+//     {
+//         ans = max(ans, dfs(i));
+//         cout << endl;
+//     }
 
-    cout << ans << endl;
+//     cout << ans << endl;
 
-    return 0;
-}
+//     return 0;
+// }
 
 
 // 方法二：树形DP

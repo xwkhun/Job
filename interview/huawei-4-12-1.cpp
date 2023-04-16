@@ -1,6 +1,13 @@
 #include <iostream>
+#include <string>
+#include <algorithm>
+#include <vector>
 
 using namespace std;
+
+vector<int> R;
+int cnt;
+int max_R;
 
 /*
 题目：
@@ -39,15 +46,11 @@ using namespace std;
 解释:因为即使imit设置为1,1+1+1+1+1+1+1+1=8>7也不满足，所以limit只能为0
 */
 
-#include <vector>
-
-vector<int> R;
-int cnt;
-int max_R;
+// 注意这题要注意数据范围 0<R.length<=10^5，0<R[i]<105, 那么这些数加起来最大为 10^5 * 10^5 = 10^10, 超出了int能表示的范围，因此要用long long 型来表示
 
 bool check(int x)
 {
-    int sum = 0;
+    long long sum = 0;  // 这里如果用int会有部分例子无法通过
     for (auto i: R)
     {
         if (i < x)
@@ -55,21 +58,27 @@ bool check(int x)
         else
             sum = sum + x;
     }
-    return sum <= max_R;
+    return sum <= cnt;
 }
 
 int main()
 {
     int temp;
+    cin >> temp;
     while(cin >> temp)
     {
         R.push_back(temp);
+        if ('\n' == cin.get())
+		{
+			break;
+		}
     }
         
-    
-    max_R = R.back();
+    cnt = R.back();
+    R.pop_back();
+    max_R = *max_element(R.begin(), R.end());
 
-    int l = 0, r = 1e5;
+    int l = 0, r = max_R;
 
     while(l < r)
     {
@@ -80,6 +89,9 @@ int main()
             r = mid - 1;
     }
 
-    cout << r << endl;
+    if (r == max_R)
+        puts("-1");
+    else
+        cout << r << endl;
     return 0;
 }

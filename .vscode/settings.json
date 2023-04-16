@@ -1,9 +1,9 @@
 {
-    "workbench.colorTheme": "Visual Studio 2017 Dark - C++",
-    "terminal.integrated.inheritEnv": false,
+    // "workbench.colorTheme": "Visual Studio 2017 Dark - C++",
+    // "terminal.integrated.inheritEnv": false,
     // "editor.fontFamily": "'monospace'",
     // "terminal.integrated.fontFamily": "monospace",
-    "workbench.iconTheme": "vscode-icons",
+    // "workbench.iconTheme": "vscode-icons",
     // "workbench.settings.editor": "json",
 
     "settingsSync.ignoredExtensions": [],
@@ -67,7 +67,8 @@
     "javascript": "node",
     "java": "cd $dir && javac $fileName && java $fileNameWithoutExt",
     "c": "chcp 65001 && cd $dir && gcc $fileName -o .\\build\\$fileNameWithoutExt && .\\build\\$fileNameWithoutExt",
-    "cpp": "chcp 65001 && cd $dir && if (!(Test-Path .\\build)) {$null = md .\\build} && g++ $fileName -o .\\build\\$fileNameWithoutExt && .\\build\\$fileNameWithoutExt",
+    "cpp": "cd $dir && if (!(Test-Path .\\build)) {$null = md .\\build} && g++ $fileName -o .\\build\\$fileNameWithoutExt && .\\build\\$fileNameWithoutExt",
+    // "cpp": "cd $dir; g++ $fileName -o .\\build\\$fileNameWithoutExt ; .\\build\\$fileNameWithoutExt",
     "objective-c": "cd $dir && gcc -framework Cocoa $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
     "php": "php",
     "python": "python -u",
@@ -160,5 +161,6 @@
         "vector": "cpp",
         "ostream": "cpp",
         "xstddef": "cpp"
-    }
+    },
+    "editor.fontFamily": "Consolas, 'Courier New', monospace"
 }
